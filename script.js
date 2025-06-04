@@ -32,21 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Inizializzazione del carosello
   const track = document.querySelector('.carousel-track');
-  const cards = document.querySelectorAll('.testimonial-card');
+  const groups = document.querySelectorAll('.testimonial-group');
   const prevBtn = document.querySelector('.carousel-prev');
   const nextBtn = document.querySelector('.carousel-next');
   const dotsContainer = document.querySelector('.carousel-dots');
   let currentIndex = 0;
   let autoScrollInterval;
-  const cardWidth = cards[0].offsetWidth + 20; // Card width + margin-right
-  const totalCards = cards.length;
+  const totalGroups = groups.length;
   
   // Crea i dots di navigazione
   function createDots() {
-    cards.forEach((_, index) => {
+    groups.forEach((_, index) => {
       const dot = document.createElement('button');
       dot.classList.add('carousel-dot');
-      dot.setAttribute('aria-label', `Vai alla testimonianza ${index + 1}`);
+      dot.setAttribute('aria-label', `Vai al gruppo di testimonianze ${index + 1}`);
       if (index === 0) dot.classList.add('active');
       dot.addEventListener('click', () => goToSlide(index));
       dotsContainer.appendChild(dot);
@@ -56,17 +55,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Vai a uno slide specifico
   function goToSlide(index) {
     // Gestisci lo scorrimento infinito
-    if (index >= totalCards) {
+    if (index >= totalGroups) {
       currentIndex = 0;
     } else if (index < 0) {
-      currentIndex = totalCards - 1;
+      currentIndex = totalGroups - 1;
     } else {
       currentIndex = index;
     }
     
-    // Scroll fluido
-    track.style.scrollBehavior = 'smooth';
-    track.scrollLeft = currentIndex * cardWidth;
+    // Anima lo scorrimento
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
     
     // Aggiorna i dots attivi
     updateDots();
@@ -84,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function startAutoScroll() {
     autoScrollInterval = setInterval(() => {
       goToSlide(currentIndex + 1);
-    }, 5000);
+    }, 6000);
   }
 
   // Gestione eventi
@@ -149,12 +147,22 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     startAutoScroll();
     
-    // Aggiorna l'indice durante lo scroll
-    track.addEventListener('scroll', () => {
-      const scrollPosition = track.scrollLeft;
-      currentIndex = Math.round(scrollPosition / cardWidth);
-      updateDots();
-    }, { passive: true });
+    // Per i dispositivi touch, rileva il gruppo visibile e aggiorna i dots
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const groupIndex = Array.from(groups).indexOf(entry.target);
+          if (groupIndex !== -1 && groupIndex !== currentIndex) {
+            currentIndex = groupIndex;
+            updateDots();
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    groups.forEach(group => {
+      observer.observe(group);
+    });
   }
 
   // Tracciamento conversioni WhatsApp
