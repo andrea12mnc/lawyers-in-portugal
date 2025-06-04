@@ -1,0 +1,46 @@
+# Allow all web crawlers to index all pages
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.lawyers-in-portugal.com/sitemap.xml
+
+# Disallow crawling of admin and internal pages
+Disallow: /admin/
+Disallow: /private/
+Disallow: /includes/
+Disallow: /cgi-bin/
+
+# Allow all other pages
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Crawl-delay: 10
+
+# Block specific bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Block specific pages from search engines
+Disallow: /search/
+Disallow: /?s=
+Disallow: /wp-json/
+Disallow: /feed/
+
+# Allow media files
+Allow: /wp-content/uploads/
+
+# Block specific file types
+Disallow: /*.php$
+
+# Block query strings
+Disallow: /*?
