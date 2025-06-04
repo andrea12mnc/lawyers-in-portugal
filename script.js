@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Loader animation
+  const loader = document.querySelector('.loader');
+  
+  // Hide loader after page loads
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 800);
+    }, 1000);
+  });
+  
   // Inizializzazione del carosello
   const track = document.querySelector('.carousel-track');
   const cards = document.querySelectorAll('.testimonial-card');
@@ -7,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const dotsContainer = document.querySelector('.carousel-dots');
   let currentIndex = 0;
   let autoScrollInterval;
-  const cardWidth = cards[0].offsetWidth + 30; // Larghezza card + gap
+  const cardWidth = cards[0].offsetWidth + 20; // Card width + margin-right
   const totalCards = cards.length;
-
+  
   // Crea i dots di navigazione
   function createDots() {
     cards.forEach((_, index) => {
