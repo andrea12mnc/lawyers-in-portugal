@@ -12,6 +12,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
   });
   
+  // Parallax effect for showcase images
+  const parallaxImages = document.querySelectorAll('.parallax-image');
+  
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    
+    parallaxImages.forEach(image => {
+      const parent = image.closest('.showcase-item');
+      const parentTop = parent.getBoundingClientRect().top;
+      const speed = 0.15;
+      
+      if (parentTop < window.innerHeight && parentTop > -parent.offsetHeight) {
+        const yPos = -((parentTop * speed));
+        image.style.transform = `translateY(${yPos}px)`;
+      }
+    });
+  });
+  
   // Inizializzazione del carosello
   const track = document.querySelector('.carousel-track');
   const cards = document.querySelectorAll('.testimonial-card');

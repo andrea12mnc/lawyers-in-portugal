@@ -119,12 +119,41 @@ p.disclaimer {
   background-color: #25D366 !important; /* WhatsApp green */
   color: white !important;
   border-color: #25D366 !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.whatsapp-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, 
+    rgba(255,255,255,0) 10%, 
+    rgba(255,255,255,0.2) 20%, 
+    rgba(255,255,255,0) 30%);
+  transform: rotate(30deg);
+  animation: shimmer 3s infinite;
+  z-index: -1;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(30deg);
+  }
 }
 
 .whatsapp-button:hover {
   background-color: #1da851 !important;
   border-color: #1da851 !important;
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+  transform: translateY(-3px);
 }
 
 .cta-button:hover {
@@ -282,17 +311,19 @@ p.disclaimer {
 }
 
 .logo-circle {
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   overflow: hidden;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 2px solid rgba(0, 51, 102, 0.08);
+  box-shadow: 0 5px 20px rgba(0, 51, 102, 0.15);
+  border: 2px solid rgba(0, 51, 102, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 20;
 }
 
 .logo-circle:hover {
@@ -301,10 +332,117 @@ p.disclaimer {
 }
 
 .header-logo img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
   display: block;
+  transform: scale(0.9);
+}
+
+/* Portugal Showcase Section */
+.portugal-showcase {
+  padding: 100px 0;
+  background: linear-gradient(to bottom, var(--bg-light), #ffffff);
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.showcase-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.showcase-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 51, 102, 0.15);
+}
+
+.showcase-image {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.parallax-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.showcase-item:hover .parallax-image {
+  transform: scale(1.05);
+}
+
+.showcase-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: #fff;
+  transform: translateY(70px);
+  transition: transform 0.4s ease;
+}
+
+.showcase-item:hover .showcase-content {
+  transform: translateY(0);
+}
+
+.showcase-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.showcase-content p {
+  font-size: 0.95rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.showcase-item:hover .showcase-content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+  .showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .showcase-image {
+    height: 350px;
+  }
+  
+  .showcase-content {
+    transform: translateY(0);
+  }
+  
+  .showcase-content p {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Testimonials Section */
