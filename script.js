@@ -1,16 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Loader animation
-  const loader = document.querySelector('.loader');
-  
-  // Hide loader after page loads
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loader.classList.add('hidden');
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 800);
-    }, 1000);
-  });
+  // Rimuovo la parte del loader poiché è stato rimosso dall'HTML
   
   // Parallax effect for showcase images
   const parallaxImages = document.querySelectorAll('.parallax-image');
@@ -30,26 +19,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-  // Inizializzazione del carosello
+  // Inizializzazione del carosello migliorato
   const track = document.querySelector('.carousel-track');
-  const groups = document.querySelectorAll('.testimonial-group');
+  const cards = document.querySelectorAll('.testimonial-card');
   const prevBtn = document.querySelector('.carousel-prev');
   const nextBtn = document.querySelector('.carousel-next');
   const dotsContainer = document.querySelector('.carousel-dots');
+  
+  // Riorganizza le card in gruppi di 3
+  function organizeCards() {
+    // Rimuovi eventuali gruppi esistenti
+    while (track.firstChild) {
+      track.removeChild(track.firstChild);
+    }
+    
+    // Calcola quanti gruppi servono
+    const cardsArray = Array.from(cards);
+    const totalGroups = Math.ceil(cardsArray.length / 3);
+    
+    // Crea i nuovi gruppi con 3 card ciascuno
+    for (let i = 0; i < totalGroups; i++) {
+      const group = document.createElement('div');
+      group.className = 'testimonial-group';
+      
+      // Prendi 3 card per questo gruppo o meno se siamo all'ultimo gruppo
+      const start = i * 3;
+      const end = Math.min(start + 3, cardsArray.length);
+      
+      for (let j = start; j < end; j++) {
+        group.appendChild(cardsArray[j].cloneNode(true));
+      }
+      
+      track.appendChild(group);
+    }
+    
+    return totalGroups;
+  }
+  
+  const totalGroups = organizeCards();
   let currentIndex = 0;
   let autoScrollInterval;
-  const totalGroups = groups.length;
   
   // Crea i dots di navigazione
   function createDots() {
-    groups.forEach((_, index) => {
+    dotsContainer.innerHTML = ''; // Pulisci eventuali dots esistenti
+    
+    for (let i = 0; i < totalGroups; i++) {
       const dot = document.createElement('button');
       dot.classList.add('carousel-dot');
-      dot.setAttribute('aria-label', `Vai al gruppo di testimonianze ${index + 1}`);
-      if (index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
+      dot.setAttribute('aria-label', `Vai al gruppo di testimonianze ${i + 1}`);
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
       dotsContainer.appendChild(dot);
-    });
+    }
   }
 
   // Vai a uno slide specifico
@@ -63,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
       currentIndex = index;
     }
     
-    // Anima lo scorrimento
+    // Anima lo scorrimento con una transizione fluida
+    track.style.transition = 'transform 0.5s ease-in-out';
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
     
     // Aggiorna i dots attivi
@@ -78,11 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Auto-scroll
+  // Auto-scroll con intervallo più lungo
   function startAutoScroll() {
     autoScrollInterval = setInterval(() => {
       goToSlide(currentIndex + 1);
-    }, 6000);
+    }, 8000);
   }
 
   // Gestione eventi
