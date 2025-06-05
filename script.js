@@ -195,4 +195,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Inizializza tutto
   init();
+  
+  // FAQ Accordion functionality
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+  
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const accordionItem = button.parentElement;
+      const isActive = accordionItem.classList.contains('active');
+      
+      // Close all accordion items
+      accordionButtons.forEach(btn => {
+        btn.parentElement.classList.remove('active');
+      });
+      
+      // Toggle the clicked item
+      if (!isActive) {
+        accordionItem.classList.add('active');
+      }
+    });
+  });
+  
+  // Mobile menu toggle
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const header = document.querySelector('.header');
+  
+  if (mobileMenuToggle && navMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+      header.classList.toggle('menu-open');
+    });
+  }
+  
+  // Close mobile menu when clicking on a nav link
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 992) {
+        navMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        header.classList.remove('menu-open');
+      }
+    });
+  });
+  
+  // Header scroll effect
+  let lastScrollTop = 0;
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > 100) {
+      header.classList.add('scrolled');
+      
+      if (scrollTop > lastScrollTop) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
+    } else {
+      header.classList.remove('scrolled');
+      header.classList.remove('header-hidden');
+    }
+    
+    lastScrollTop = scrollTop;
+  });
 });

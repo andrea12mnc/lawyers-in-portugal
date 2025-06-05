@@ -29,11 +29,28 @@
 
   <header class="header">
     <div class="container">
-      <div class="header-logo">
-        <div class="logo-circle">
-          <img src="images/logo_and.svg" alt="Lawyers In Portugal">
+      <nav class="navbar">
+        <div class="header-logo">
+          <div class="logo-circle">
+            <img src="images/logo_and.svg" alt="Lawyers In Portugal">
+          </div>
         </div>
-      </div>
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#about" class="nav-link">About Portugal</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-toggle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </nav>
     </div>
   </header>
 
@@ -46,6 +63,89 @@
           <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
         </svg>
       </a>
+    </div>
+  </section>
+  
+  <section id="services" class="services-section">
+    <div class="container">
+      <h2>Our Immigration Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3>Golden Visa Program</h3>
+          <p>Obtain residence in Portugal through investment. Our lawyers specialize in helping clients navigate this prestigious immigration option with efficiency and precision.</p>
+          <ul class="service-features">
+            <li>Expert guidance on investment options</li>
+            <li>Full documentation preparation</li>
+            <li>Application submission and tracking</li>
+            <li>Family inclusion support</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More →</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3>D7 Visa (Passive Income)</h3>
+          <p>Ideal for retirees and individuals with stable income sources. Our attorneys provide comprehensive support for this popular residence permit option.</p>
+          <ul class="service-features">
+            <li>Income requirements analysis</li>
+            <li>Document preparation and verification</li>
+            <li>NIF and bank account assistance</li>
+            <li>Residence card application</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More →</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <h3>Digital Nomad Visa</h3>
+          <p>For remote workers and digital professionals seeking to make Portugal their temporary or permanent home while working internationally.</p>
+          <ul class="service-features">
+            <li>Eligibility assessment</li>
+            <li>Remote work verification</li>
+            <li>Application process handling</li>
+            <li>Relocation guidance</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More →</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3>Family Reunification</h3>
+          <p>Bring your family members to join you in Portugal. We handle all aspects of the family reunification process to keep your loved ones together.</p>
+          <ul class="service-features">
+            <li>Eligibility assessment for family members</li>
+            <li>Document preparation and translation</li>
+            <li>Application submission</li>
+            <li>Interview preparation</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More →</a>
+        </div>
+      </div>
     </div>
   </section>
   
@@ -80,6 +180,53 @@
             <h3>Stunning Landscapes</h3>
             <p>From coastal vistas to rolling hills, Portugal offers diverse natural beauty in every direction.</p>
           </div>
+          <h3>Safety & Security</h3>
+          <p>Consistently ranked as one of the world's safest countries with low crime rates and stable political environment.</p>
+        </div>
+      </div>
+      
+      <div class="portugal-highlights">
+        <div class="highlight-image">
+          <img src="images/portugal-landscape.jpg" alt="Beautiful Portugal Landscape" class="rounded-image">
+        </div>
+        <div class="highlight-content">
+          <h3>The Portuguese Lifestyle</h3>
+          <p>Portugal offers an exceptional quality of life, combining Mediterranean charm with modern European living standards. The relaxed pace, friendly locals, and emphasis on work-life balance create an environment where you can truly thrive.</p>
+          <ul class="highlight-list">
+            <li>
+              <span class="highlight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Rich cultural heritage with historic cities and traditions</span>
+            </li>
+            <li>
+              <span class="highlight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Diverse landscapes from golden beaches to rolling vineyards</span>
+            </li>
+            <li>
+              <span class="highlight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Vibrant culinary scene with exceptional wines and seafood</span>
+            </li>
+            <li>
+              <span class="highlight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Growing technology hub with excellent digital infrastructure</span>
+            </li>
+          </ul>
+          <a href="#contact" class="btn">Explore Your Options</a>
         </div>
       </div>
     </div>
@@ -292,6 +439,185 @@
           </svg>
         </button>
         <div class="carousel-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <p class="section-subtitle">Find answers to the most common questions about immigration to Portugal</p>
+      
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-button">
+            <span>What are the main visa options for moving to Portugal?</span>
+            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <p>Portugal offers several visa options including the Golden Visa (investment), D7 Visa (passive income/retirement), D2 Visa (entrepreneurs), and Digital Nomad Visa. Each has different requirements based on your financial situation and goals.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button">
+            <span>How long does the visa application process take?</span>
+            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <p>Processing times vary by visa type and individual circumstances. Generally, you can expect 3-6 months from application to approval. Golden Visa applications may take longer due to investment verification procedures.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button">
+            <span>What are the minimum income requirements for the D7 Visa?</span>
+            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <p>Applicants must demonstrate a minimum stable income equivalent to the Portuguese minimum wage (currently around €760 per month). However, authorities often prefer to see higher income to ensure financial stability.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button">
+            <span>Can I bring my family members with me to Portugal?</span>
+            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <p>Yes, most Portuguese visas allow for family reunification. This typically includes your spouse, dependent children under 18 (or older if studying), and in some cases, dependent parents. Family members can apply simultaneously or later through family reunification.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button">
+            <span>What are the requirements for Portuguese citizenship?</span>
+            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <p>To apply for Portuguese citizenship, you generally need to have legally resided in Portugal for 5 years, demonstrate basic Portuguese language proficiency (A2 level), have no criminal record, and show sufficient integration into Portuguese society.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h2>Get In Touch</h2>
+          <p class="contact-intro">Ready to start your journey to Portugal? Our immigration experts are standing by to assist you with all your visa and relocation needs.</p>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4>Call Us</h4>
+              <p>+351 123 456 789</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h4>Email Us</h4>
+              <p>info@lawyersinportugal.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <h4>Office Address</h4>
+              <p>Avenida da Liberdade 110, Lisbon, Portugal</p>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="contact-form-wrapper">
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Your email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option value="">Select a service</option>
+                <option value="golden-visa">Golden Visa</option>
+                <option value="d7-visa">D7 Visa</option>
+                <option value="digital-nomad">Digital Nomad Visa</option>
+                <option value="family">Family Reunification</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your situation"></textarea>
+            </div>
+            
+            <div class="form-group form-checkbox">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">I consent to having this website store my submitted information and contact me.</label>
+            </div>
+            
+            <button type="submit" class="btn-submit">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
